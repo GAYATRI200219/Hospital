@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+  font-family: 'Ubuntu',sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --blue:#13c5dd;
+  --white:#fff;
+  --grey:#f5f5f5;
+  --black1:#222;
+  --black2:#999;
+}
+body{
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.main_container{
+  position: relative;
+  width: 100%;
+}
+/* =============navigation=================  */
+
+.profile-img img{
+  border-radius: 50%;
+  border: 5px solid var(--white);
+  
+}
+.navigation{
+  position: fixed;
+  width: 300px;
+  height: 100%;
+    background: linear-gradient(45deg,#47cebe,#ef4a82);
+  
+  border-left: 10px solid #47cebe;
+  transition: 0.5s;
+  overflow: hidden;
+
+}
+.navigation.active{
+  width: 80px;
+}
+.navigation ul{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.navigation ul li{
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+
+}
+.navigation ul li:hover,
+.navigation ul li.hovered{
+  background-color: var(--white);
+}
+.navigation ul li:nth-child(1){
+  margin-bottom: 0px;
+  pointer-events: none;
+}
+.navigation ul li a{
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered button{
+  color: var(--blue);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
+  color: var(--blue);
+}
+.navigation ul li a .icon{
+  position: relative;
+  display: block;
+  min-width: 60px;
+  line-height: 75px;
+  height: 60px;
+  text-align: center;
+} 
+.navigation ul li a .icon i{
+  font-size: 1.75rem;
+}
+.navigation ul li a .title{
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  white-space: nowrap;
+}
+.book_active{color: rgb(0, 64, 255) !important;}
+
+/* ---------------------------curve outside--------------  */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+.add:hover .book23{
+  color: var(--blue);
+}
+
+.main2{
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100%;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main2.active{
+  width: calc(100% - 80px);
+  left: 80px;
+  
+}
+.profile-img.active img{
+  display: none;
+}
+.booking1.active{
+  display: none;
+}
+
+.dropdown_icon.active{
+  display: none;
+}
+
+.topbar{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  /* background: var(--blue) !important  ; */
+  box-shadow: 0 0px 6px rgba(0,0,0,0.8);
+ 
+}
+.toggle{
+  position: relative;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.search{
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+
+}
+.search label input{
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--black2);
+
+}
+.search label i{
+  position: absolute;
+  top: 12px;
+  left:10px ;
+  font-size: 1rem;
+}
+.user{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.user img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* =============cards=============  */
+.cardbox{
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 30px;
+}
+.cardbox .card2{
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display:flex !important;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0,0,0,0.8);
+
+}
+.cardbox .card2 .numbers{
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+.cardbox .card2 .cardname{
+  color: var(--black2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+.cardbox .card2 .iconbox{
+  font-size: 3.5rem;
+  color: var(--black2);
+  /* margin-left: 40px; */
+}
+.cardbox .card2:hover{
+  background: var(--blue);
+
+}
+.cardbox .card2:hover .numbers,
+.cardbox .card2:hover .cardname,
+.cardbox .card2:hover .iconbox{
+  color: var(--white);
+}
+
+
+/* ===========Booking details========== */
+.details{
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  /* grid-template-columns: 2fr 1fr; */
+  grid-gap:30px;
+  /* margin-top: 10px; */
+
+}
+.details .recent_orders{
+  position: relative;
+  display: grid;
+  min-height: 250px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0,0,0,0.8);
+  border-radius: 20px;
+}
+.details .card_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.card_header h2{
+  font-weight: 600;
+  color: var(--blue);
+}
+.card_header a{
+  position: relative;
+  padding: 5px 10px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+}
+.details table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.details table thead td{
+  font-weight: 600;
+}
+.details table thead tr td{
+  text-align: center !important;
+}
+.details table tbody tr td{
+  text-align: center !important;
+}
+.details .recent_orders table tr{
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0,0,0,0.100);
+}
+.details .recent_orders table tr:last-child{
+  border-bottom: none;
+}
+.details .recent_orders table tbody tr:hover{
+  background: var(--blue);
+  color: var(--white);  
+}
+.details .recent_orders table tr td{
+  padding: 10px;
+}
+.details .recent_orders table tr td:last-child{
+  text-align: end;
+}
+.details .recent_orders table tr .delivered{
+  padding: 2px 4px;
+  background: #8de02c;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+}
+.details .recent_orders table tr .pending{
+  padding: 2px 4px;
+  background: #f00;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+}
+
+ /* ======== === new customer ==========  */
+ .recent_customer{
+  position: relative;
+  display: grid;
+  min-height: 250px;
+  padding: 20px;
+  background: var(--white);
+  box-shadow: 0 7px 25px rgba(0,0,0,0.8);
+  border-radius: 20px;
+ }
+ .recent_customer .imgbox{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  overflow: hidden;
+ }
+ .recent_customer .imgbox img{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ }
+ .recent_customer table tr td{
+  padding: 12px 10px;
+ }
+ .recent_customer table tr td h4{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2rem;
+ }
+ .recent_customer table tr td h4 span{
+  font-size: 14px;
+  color: var(--black2);
+ }
+ .recent_customer table tr:hover{
+  background: var(--blue);
+  color: var(--white);
+ }
+ .recent_customer table tr:hover td h4 span{
+  color: var(--white);
+ }
+ 
+
+
+
+ /* ================== Add Room Booking ================ */
+ /* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  color: #ffffff;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+.dropdown-btn:hover{
+  color: var(--blue) !important;
+}
+
+
+.dropdown-container {
+  display: none;
+  background-color: transparent;
+
+  padding-left: 30px;
+}
+
+/* Optional: Style the caret down icon */
+.dropdown_icon {
+  float: right;
+  /* color: #ffffff; */
+  padding: 5px 20px;
+} 
+.dropdown_btn span:first-child{
+  font-size: 28px;
+}
+.dropdown_btn span:nth-child(2){
+  font-size: 17px;
+  margin-left: 18px;
+}
+ 
+.dropdown_menu a{
+  padding-left: 50px;
+}
+
+
+
+
+
+
+.title_menu{
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  border-radius: 25px;
+}
+.title_menu ul{
+  list-style-type: none;
+}
+.title_menu ul li{
+  display: inline-block;
+  margin-right: 7px;
+}
+.title_menu ul li a{
+  color: #999797;
+  font-size: 18px;
+}
+.title_menu ul li i{
+  color: #999797;
+  font-size: 18px;
+}
+/* ================== Main form ================ */
+.main_form{
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  border-radius: 5px;
+}
+.booking_img_upload{
+  height: 200px !important;
+  border: 2px dotted var(--black1) !important;
+}
